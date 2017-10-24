@@ -1,0 +1,31 @@
+package ClockPackage;
+
+public class AppClock {
+
+	public static void main(String[] args) {
+
+		//Clock defualtClock = new Clock();
+		//defualtClock.printTime(false);
+		
+		Clock motiClock = new Clock(23, 59, 59, 999);
+		
+		//test object #1
+		motiClock.addHours(0);
+		motiClock.addMinutes(2);
+		motiClock.addSecound(0);
+		motiClock.addmilisecound(0);
+		motiClock.printTime(false);
+		
+		motiClock.addMinutes(2);
+		motiClock.printTime(false);
+		/*
+
+     	//test object #2
+		motiClock.addHours(40);
+		motiClock.addMinutes(10);
+		motiClock.addSecound(50);
+		motiClock.addmilisecound(785);
+     	motiClock.printTime(true);
+*/
+	}
+}

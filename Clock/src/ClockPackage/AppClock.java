@@ -4,21 +4,28 @@ public class AppClock {
 
 	public static void main(String[] args) {
 
-		Clock motiClock = new Clock(1, 8, 5, 5);
+		// new default clock
+		Clock defualtClock = new Clock();
+		defualtClock.printTime(false);
+		
+        //new clock 2
+		Clock motiClock = new Clock(5, 59, 59, 000);
 
-		//test object #1
-		motiClock.addHours(4);
-		motiClock.addMinutes(1);
-		motiClock.addSecound(6);
-		motiClock.addmilisecound(7);
-     	motiClock.printTime(false);
+		motiClock.printTime(true);
 
-     	//test object #2
-		motiClock.addHours(40);
-		motiClock.addMinutes(10);
-		motiClock.addSecound(50);
-		motiClock.addmilisecound(785);
-     	motiClock.printTime(true);
+		motiClock.addHours(0);
+		motiClock.printTime(false);
+		
+		motiClock.addMinutes(2);
+		motiClock.printTime(true);
+		
+		motiClock.addSecound(130);
+		motiClock.printTime(false);
+	
+		motiClock.addmilisecound(1001);
+		
+		motiClock.printTime(true);
+
 
 	}
 }
