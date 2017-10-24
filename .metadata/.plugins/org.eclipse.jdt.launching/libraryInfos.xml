@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+<libraryInfo home="H:\Course Java\SDK" version="1.8.0_144">
+<bootpath>
+<entry path="H:\Course Java\SDK\lib\resources.jar"/>
+<entry path="H:\Course Java\SDK\lib\rt.jar"/>
+<entry path="H:\Course Java\SDK\lib\sunrsasign.jar"/>
+<entry path="H:\Course Java\SDK\lib\jsse.jar"/>
+<entry path="H:\Course Java\SDK\lib\jce.jar"/>
+<entry path="H:\Course Java\SDK\lib\charsets.jar"/>
+<entry path="H:\Course Java\SDK\lib\jfr.jar"/>
+<entry path="H:\Course Java\SDK\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="H:\Course Java\SDK\lib\ext"/>
+<entry path="C:\Windows\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="H:\Course Java\SDK\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+</libraryInfos>

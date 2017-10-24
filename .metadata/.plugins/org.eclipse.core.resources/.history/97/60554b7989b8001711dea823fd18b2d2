@@ -1,0 +1,17 @@
+package ClockPackage;
+
+public class AppClock {
+
+	public static void main(String[] args) {
+
+		Clock motiClock = new Clock(10, 8, 5, 5);
+
+		motiClock.addHours(45);
+		motiClock.addMinutes(8);
+		motiClock.addSecound(9);
+		motiClock.addmilisecound(70);
+
+		motiClock.printTime(false);
+
+	}
+}

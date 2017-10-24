@@ -1,0 +1,33 @@
+package guessTheNumber;
+
+import java.awt.geom.CubicCurve2D;
+import java.util.Random;
+
+import java.util.Scanner;
+
+public class guessTheNumber {
+
+	public static void main(String[] args) {
+		
+		int clock = 60;
+		
+		int add =59;
+		
+		int temptime = add /24;
+		
+		int tempmm = 0;
+		
+		if (add < 24) {
+			clock = add;
+			System.out.println(clock);
+		}
+		else if (add >= 24) {
+			
+			
+			clock = (add  %60) ;
+			System.out.println(clock);
+		}
+
+
+	}
+}

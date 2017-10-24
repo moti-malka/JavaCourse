@@ -1,0 +1,17 @@
+package ClockPackage;
+
+public class AppClock {
+
+	public static void main(String[] args) {
+
+		int timenow = 652;
+
+		int addTime = 10;
+
+		int temptime = timenow + addTime;
+
+		timenow = (temptime % 999);
+		System.out.println(timenow);
+
+	}
+}

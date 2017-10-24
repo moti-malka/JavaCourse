@@ -1,0 +1,20 @@
+package ClockPackage;
+
+public class AppClock {
+
+	public static void main(String[] args) {
+
+		Clock motiClock = new Clock(12, 45, 57, 546, "AMPM", false);
+		
+		motiClock.printTime(true);
+		
+		motiClock.addHours(49);
+		motiClock.addMinutes(20);
+		motiClock.addSecound(10);
+		motiClock.addmilisecound(250);
+		
+		motiClock.printTime(true);
+		
+
+	}
+}

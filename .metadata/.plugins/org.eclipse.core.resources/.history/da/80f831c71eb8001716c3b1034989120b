@@ -1,0 +1,51 @@
+package ClockPackage;
+
+public class Clock {
+	private int HH;
+	private int MM;
+	private int SS;
+	private int SSS;
+
+	public Clock(int HH, int MM, int SS, int SSS) {
+		this.HH = HH;
+		this.MM = MM;
+		this.SS = SS;
+		this.SSS = SS;
+	}
+
+	public Clock() {
+		this.HH = 14;
+		this.MM = 07;
+		this.SS = 53;
+		this.SSS = 980;
+
+	}
+
+	public void addHours(int Hours) {
+		if (Hours < 0 || Hours > 1000000000) {
+			return;
+		} else {
+			this.HH = (Hours %24);
+
+		}
+
+	}
+	
+	public void addMinutes(int Minutes) {
+		if (Minutes < 0 || Minutes > 1000000000) {
+			return;
+		}
+		else {
+			 this.MM = (Minutes %60);
+		}
+	}
+	
+	public void addSeconds(int Seconds) {
+		if (Seconds < 0 || Seconds > 1000000000) {
+			return;
+		}
+		else {
+			this.SS = (Seconds %60);
+		}
+	}
+}

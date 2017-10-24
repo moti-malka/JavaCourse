@@ -1,0 +1,18 @@
+package ClockPackage;
+
+public class AppClock {
+
+	public static void main(String[] args) {
+
+		int timenow = 23;
+
+		int addTime =23 ;
+        
+		if (addTime < 24 ) {
+			
+			timenow = addTime %24;
+		}
+		
+		System.out.println(timenow);
+	}
+}

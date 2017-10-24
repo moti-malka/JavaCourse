@@ -1,0 +1,13 @@
+package prodact;
+
+public class ProductApplication {
+	public static void main(String[] args) {
+		
+		product PC = new product(001, "HP", (float) 96.3);
+		
+		System.out.println(PC);
+ 
+
+    }
+
+}
