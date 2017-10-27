@@ -5,27 +5,17 @@ public class AppClock {
 	public static void main(String[] args) {
 
 		// new default clock
-		Clock defualtClock = new Clock();
-		defualtClock.printTime(false);
+		//Clock defualtClock = new Clock();
+		//defualtClock.printTime(false);
 		
         //new clock 2
-		Clock motiClock = new Clock(5, 59, 59, 000);
-
-		motiClock.printTime(true);
-
-		motiClock.addHours(0);
+		Clock motiClock = new Clock(00, 00, 0, 000);
+		
+		motiClock.addHours(1);
 		motiClock.printTime(false);
-		
-		motiClock.addMinutes(2);
-		motiClock.printTime(true);
-		
-		motiClock.addSecound(130);
+		motiClock.addmilisecound(85);
 		motiClock.printTime(false);
-	
-		motiClock.addmilisecound(1001);
+
 		
-		motiClock.printTime(true);
-
-
 	}
 }

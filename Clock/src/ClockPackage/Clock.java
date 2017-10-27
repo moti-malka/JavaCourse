@@ -1,14 +1,24 @@
-//clock
 package ClockPackage;
 
+/**
+ * class to Add Hours\Minutes\secound
+ * 
+ *
+ */
 public class Clock {
 	private int HH;
 	private int MM;
 	private int SS;
 	private int SSS;
-	private String Text;
-	private boolean AMPM;
+	private String AMPM;
+	private int thisTimeToChange;
 
+	
+	/**
+	 * constractor to create new clock argoument: Hours\Minutes\secound\milisec
+	 * 
+	 *
+	 */	
 	public Clock(int HH, int MM, int SS, int SSS) {
 		this.HH = HH;
 		this.MM = MM;
@@ -19,13 +29,15 @@ public class Clock {
 
 	public Clock() {
 		this.HH = 14;
-		this.MM = 7;
-		this.SS = 3;
-		this.SSS = 52;
+		this.MM = 07;
+		this.SS = 53;
+		this.SSS = 980;
 
 	}
 
-	public void addHours(int HH) {
+	
+	
+	public void addHours(int HH) { // add hh mot 
 		if (HH < 0 || HH > 1000000000) {
 			return;
 		} else {
@@ -40,12 +52,10 @@ public class Clock {
 		if (MM < 0 || MM > 1000000000) {
 			return;
 		} else {
-
 			int tempMM = this.MM + MM;
 			this.MM = (tempMM % 60);
-
-			addHours(tempMM / 60);
-
+			
+			addHours(tempMM /60);
 		}
 
 	}
@@ -55,35 +65,41 @@ public class Clock {
 			return;
 		} else {
 			int tempSS = this.SS + SS;
-			this.SS = (tempSS %60);
-			
+			this.SS = (tempSS % 60);
 			addMinutes(tempSS /60);
-
 		}
 	}
 
 	public void addmilisecound(int SSS) {
-		if (SSS < 0 || SSS > 1000000000) {
+		 addTimeGeneral(SSS, this.SSS, 1000);
+		 
+	}
+	
+	private void addTimeGeneral(int timeToAdd, int thisTimeToChange, int divisionIn) {
+		if (timeToAdd < 0 || timeToAdd > 1000000000) {
 			return;
 		} else {
-			int tempMilisecound = this.SSS + SSS;
-			this.SSS = (tempMilisecound % 1000);
-            
-			addSecound(tempMilisecound /999);
+			
+			int tempTime = thisTimeToChange + timeToAdd;
+			thisTimeToChange = (tempTime %divisionIn);
+			return;
+			
 		}
+
 	}
+
+	
 
 	public void printTime(boolean AMPM) {
 
 		if (AMPM == true) {
-			this.Text = ": AM/PM";
-
+			this.AMPM = ":AM/PM";
 			if (this.HH > 12) {
 				this.HH = this.HH - 12;
 			}
 		} else {
 
-			this.Text = "";
+			this.AMPM = "";
 		}
 		if (HH < 10) {
 
@@ -103,11 +119,11 @@ public class Clock {
 			System.out.print(this.SS + ".");
 		}
 		if (SSS < 10) {
-			System.out.print("0" + "0" + this.SSS + "" + this.Text + '\n');
+			System.out.println("0" + "0" + this.SSS + " " + this.AMPM);
 		} else if (SSS < 100) {
-			System.out.println("0" + this.SSS + "" + this.Text + '\n');
+			System.out.println("0" + this.SSS + " " + this.AMPM);
 		} else {
-			System.out.println(this.SSS + "" + this.Text + '\n');
+			System.out.println(this.SSS + " " + this.AMPM);
 		}
 
 	}
