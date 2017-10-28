@@ -10,13 +10,12 @@ public class AppClock {
 		
         //new clock 2
 		Clock motiClock = new Clock(00, 00, 0, 000);
-		motiClock.addmilisecound(9);
+		
+		motiClock.addHours(1);
 		motiClock.printTime(false);
-		motiClock.addSecound(30);
+		motiClock.addmilisecound(85);
 		motiClock.printTime(false);
-		motiClock.addSecound(3);
-		motiClock.printTime(false);
-		motiClock.addSecound(60);
-		motiClock.printTime(false);
+
+		
 	}
 }

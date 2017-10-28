@@ -14,9 +14,5 @@ public class AppClock {
 		motiClock.printTime(false);
 		motiClock.addSecound(30);
 		motiClock.printTime(false);
-		motiClock.addSecound(3);
-		motiClock.printTime(false);
-		motiClock.addSecound(60);
-		motiClock.printTime(false);
 	}
 }

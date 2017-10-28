@@ -34,12 +34,13 @@ public class Clock {
 
 	}
 
-	public void addHours(int HH) {
+	public void addHours(int HH) { // add hh mot
 		if (HH < 0 || HH > 1000000000) {
 			return;
 		} else {
+			int tempHH = this.HH + HH;
+			this.HH = (tempHH % 24);
 
-			this.HH = addTimeGeneral(HH, this.HH, 24);
 		}
 
 	}
@@ -48,29 +49,22 @@ public class Clock {
 		if (MM < 0 || MM > 1000000000) {
 			return;
 		} else {
+			int tempMM = this.MM + MM;
+			this.MM = (tempMM % 60);
 
-			this.MM = addTimeGeneral(MM, this.MM, 60);
-			addHours((this.MM + MM) / 60);
+			addHours(tempMM / 60);
 		}
 
 	}
 
 	public void addSecound(int SS) {
-		if (SS < 0 || SS > 1000000000) {
-			return;
-		} else {
-			this.SS = addTimeGeneral(SS, this.SS, 60);
-			addMinutes((this.SS + SS) / 60);
-		}
-
+		this.SS = addTimeGeneral(SS, this.SS, 60);
+		addMinutes((this.SS + SS) / 60);
 	}
 
 	public void addmilisecound(int SSS) {
-		if (SSS < 0 || SSS > 1000000000) {
-			return;
-		} else {
-			this.SSS = addTimeGeneral(SSS, this.SSS, 1000);
-		}
+		this.SSS = addTimeGeneral(SSS, this.SSS, 1000);
+
 	}
 
 	private int addTimeGeneral(int timeToAdd, int thisTimeToChange, int divisionIn) {
