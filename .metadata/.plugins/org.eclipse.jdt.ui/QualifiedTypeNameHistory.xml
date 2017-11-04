@@ -11,9 +11,12 @@
 <fullyQualifiedTypeName name="PackegesBank.BankAccount"/>
 <fullyQualifiedTypeName name="java.lang.Double"/>
 <fullyQualifiedTypeName name="prodact.product"/>
+<fullyQualifiedTypeName name="ClockPackage.Clock"/>
+<fullyQualifiedTypeName name="javax.xml.ws.FaultAction"/>
+<fullyQualifiedTypeName name="users.User"/>
+<fullyQualifiedTypeName name="users.UserHandler"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
-<fullyQualifiedTypeName name="ClockPackage.Clock"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
-<fullyQualifiedTypeName name="javax.xml.ws.FaultAction"/>
+<fullyQualifiedTypeName name="Pacakage.Board"/>
 </qualifiedTypeNameHistroy>

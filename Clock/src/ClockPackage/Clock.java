@@ -14,7 +14,7 @@ public class Clock {
 	private int thisTimeToChange;
 
 	/**
-	 * constractor to create new clock argoument: Hours\Minutes\secound\milisec
+	 * Constructor to create new clock argument: Hours\Minutes\second\milisec
 	 * 
 	 *
 	 */
