@@ -1,14 +1,25 @@
 package Pacakage;
 
+import java.util.Scanner;
+
 public class AppTicTac {
 
 	public static void main(String[] args) {
+
+        //create new user
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Hello, Enter name for X player: ");
+		players X = new players(scanner.nextLine());
+		System.out.print("Hello, Enter name for O player: ");
+		players O = new players(scanner.nextLine());
+		String playerX = X.ToString();
+		String playerO = O.ToString();
 		
-		Board motiBoard = new Board();
 		
-		motiBoard.setXO(0, 0, "x");
-		motiBoard.setXO(1, 1, "x");
-		motiBoard.setXO(2, 2, "x");
+
+		Board TicTacBoard = new Board();
+		TicTacBoard.startNewGame(playerX, playerO);
+
 	}
 
 }
