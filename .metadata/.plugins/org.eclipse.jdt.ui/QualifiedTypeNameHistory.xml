@@ -20,5 +20,6 @@
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="AnimalPackage.Animal"/>
 <fullyQualifiedTypeName name="Pacakage.Board"/>
 </qualifiedTypeNameHistroy>

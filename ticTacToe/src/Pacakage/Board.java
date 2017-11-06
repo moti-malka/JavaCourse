@@ -10,6 +10,9 @@ public class Board {
 	private String[][] Board;
 	private String Player;
 	private String validXO;
+	private int[] length;
+	private int[] width;
+	private int conter;
 
 	public Board() {
 		Board = new String[3][3];
@@ -45,11 +48,11 @@ public class Board {
 		while (continueGame == 0) {
 			if (nextPlayer == 1) {
 				this.Player = playerX;
-				this.validXO = " x ";
+				this.validXO = "  X  ";
 
 			} else {
 				this.Player = playerO;
-				this.validXO = " o ";
+				this.validXO = "  O  ";
 			}
 
 			Scanner Scanner = new Scanner(System.in);
@@ -68,74 +71,175 @@ public class Board {
 			if (checkIfCellvalid(mainArray, secondArray)) {
 				Board[mainArray][secondArray] = this.validXO;
 				checkWinner();
+				showBoard();
 
 			} else {
 				System.out.println('\n' + "The cell you selected is not valid!!");
+				continue;
+			}
+			if (nextPlayer == 1) {
+				nextPlayer++;
+			} else {
+				nextPlayer = 1;
 			}
 
 		}
 
 	}
 
+	private void showBoard() {
+		System.out.println('\n');
+		setLengthWidth();
+		for (int LengthWidth : length) {
+			System.out.print("     " + LengthWidth);
+		}
+		System.out.print('\n');
+
+		System.out.print("  " + this.width[0]);
+		for (int i = 0; i < Board.length; i++) {
+			printBoard(0, i);
+
+		}
+		System.out.print('\n');
+		System.out.print('\n');
+		System.out.print("  " + this.width[1]);
+
+		for (int i = 0; i < Board.length; i++) {
+			printBoard(1, i);
+
+		}
+		System.out.print('\n');
+		System.out.print('\n');
+		System.out.print("  " + this.width[2]);
+		for (int i = 0; i < Board.length; i++) {
+			printBoard(2, i);
+
+		}
+	}
+
 	private void checkWinner() {
 
-		int conter = 0;
+		this.conter = 0;
 		for (int i = 0; i < 3; i++) {
 			if (Board[0][i] == this.validXO) {
-				conter++;
-				if (conter == 3) {
-					System.out.println("Congratulations the player " + this.Player + " won");
-					System.exit(0);
-				}
+				this.conter++;
 
 			} else {
-				conter = 0;
-
+				this.conter = 0;
 			}
 
 		}
+		Ccounter(this.conter);
 		for (int i = 0; i < 3; i++) {
 			if (Board[1][i] == this.validXO) {
-				conter++;
-				if (conter == 3) {
-					System.out.println("Congratulations the player " + this.Player + " won");
-					System.exit(0);
-				} else {
-					;
-				}
-
+				this.conter++;
 			} else {
-				conter = 0;
-
+				this.conter = 0;
 			}
+
 		}
+		Ccounter(this.conter);
+
 		for (int i = 0; i < 3; i++) {
 			if (Board[2][i] == this.validXO) {
-				conter++;
-				if (conter == 3) {
-					System.out.println("Congratulations the player " + this.Player + " won");
-					System.exit(0);
-				} else {
-					;
-				}
+				this.conter++;
 
 			} else {
-				conter = 0;
-
+				this.conter = 0;
 			}
+
 		}
+		Ccounter(this.conter);
 		for (int i = 0; i < 3; i++) {
 			if (Board[i][i] == this.validXO) {
-				conter++;
-				if (conter == 3) {
-					System.out.println("Congratulations the player " + this.Player + " won");
-					System.exit(0);
+				this.conter++;
+			} else {
+				this.conter = 0;
+			}
+		}
 
-				}
+		Ccounter(this.conter);
+		int j = 0;
+		for (int i = 0; i < Board.length; i++) {
+			if (Board[j][i] == this.validXO) {
+				j++;
+
+				this.conter++;
+
+			} else {
+				this.conter = 0;
+			}
+		}
+		
+		Ccounter(this.conter);
+
+		for (int i = 0; i < 3; i++) {
+			if (Board[i][0] == this.validXO) {
+				this.conter++;
+
+			} else {
+				this.conter = 0;
 			}
 
 		}
+		Ccounter(this.conter);
+		for (int i = 0; i < 3; i++) {
+			if (Board[i][1] == this.validXO) {
+				this.conter++;
+
+			} else {
+				this.conter = 0;
+			}
+		}
+		Ccounter(this.conter);
+		for (int i = 0; i < 3; i++) {
+			if (Board[i][2] == this.validXO) {
+				this.conter++;
+
+			} else {
+				this.conter = 0;
+			}
+		}
+		Ccounter(this.conter);
 		
+		int i =0;
+		while (i == 0) {
+			if (Board[0][2] == this.validXO && Board[1][1] == this.validXO && Board[2][0] == this.validXO) {
+				this.conter = 3;
+				System.out.println(this.conter);
+				i++;
+
+			} else {
+				this.conter = 0;
+				i++;
+				
+			}
+		}
+		Ccounter(this.conter);
+
+
+	}
+
+	private void setLengthWidth() {
+		this.length = new int[3];
+		this.width = new int[3];
+		for (int i = 0; i < 3; i++) {
+			this.length[i] = i + 1;
+			this.width[i] = i + 1;
+		}
+
+	}
+
+	private void Ccounter(int conter) {
+
+		if (conter == 3 || conter > 6 ) {
+
+			System.out.println("Congratulations the player " + this.Player + " won");
+			showBoard();
+			System.exit(1);
+		} else {
+			;
+		}
 
 	}
 
@@ -154,7 +258,7 @@ public class Board {
 	}
 
 	private void printBoard(int mainArray, int secondArray) {
-		System.out.print(Board[mainArray][secondArray]);
+		System.out.print(Board[mainArray][secondArray] + " ");
 
 	}
 
