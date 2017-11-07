@@ -7,12 +7,15 @@ import java.util.Scanner;
  */
 public class Board {
 
-	private String[][] Board;
+	private final String[][] Board;
 	private String Player;
 	private String validXO;
 	private int[] length;
 	private int[] width;
 	private int conter;
+	private int continueGame;{
+		
+	}
 
 	public Board() {
 		Board = new String[3][3];
@@ -20,32 +23,28 @@ public class Board {
 	}
 
 	public void startNewGame(String playerX, String playerO) {
-		System.out.println('\n');
-		for (int i = 0; i < 3; i++) {
-			Board[0][i] = " [ ] ";
-			printBoard(0, i);
-		}
-		System.out.println('\n');
-		for (int i = 0; i < 3; i++) {
-			Board[1][i] = " [ ] ";
-			printBoard(1, i);
-		}
-		System.out.println('\n');
-		for (int i = 0; i < 3; i++) {
-			Board[2][i] = " [ ] ";
-			printBoard(2, i);
-		}
+		initialazationBoard(0);
+		initialazationBoard(1);
+		initialazationBoard(2);
 		setXO(playerX, playerO);
+	}
+
+	private void initialazationBoard(int mainArray) {
+		System.out.println('\n');
+		for (int i = 0; i < Board.length; i++) {
+			Board[mainArray][i] = " [ ] ";
+			printBoard(mainArray, i);
+		}
 
 	}
 
 	private void setXO(String playerX, String playerO) {
-		int continueGame = 0;
+		this.continueGame = 0;
 		int nextPlayer = 1;
 		int mainArray = 0;
 		int secondArray = 0;
 		this.validXO = "";
-		while (continueGame == 0) {
+		while (this.continueGame == 0) {
 			if (nextPlayer == 1) {
 				this.Player = playerX;
 				this.validXO = "  X  ";
@@ -120,36 +119,14 @@ public class Board {
 	private void checkWinner() {
 
 		this.conter = 0;
-		for (int i = 0; i < 3; i++) {
-			if (Board[0][i] == this.validXO) {
-				this.conter++;
 
-			} else {
-				this.conter = 0;
-			}
+		indexMainArray(0);
+		indexMainArray(1);
+		indexMainArray(2);
+		indexSecondArray(0);
+		indexSecondArray(1);
+		indexSecondArray(2);
 
-		}
-		Ccounter(this.conter);
-		for (int i = 0; i < 3; i++) {
-			if (Board[1][i] == this.validXO) {
-				this.conter++;
-			} else {
-				this.conter = 0;
-			}
-
-		}
-		Ccounter(this.conter);
-
-		for (int i = 0; i < 3; i++) {
-			if (Board[2][i] == this.validXO) {
-				this.conter++;
-
-			} else {
-				this.conter = 0;
-			}
-
-		}
-		Ccounter(this.conter);
 		for (int i = 0; i < 3; i++) {
 			if (Board[i][i] == this.validXO) {
 				this.conter++;
@@ -170,39 +147,10 @@ public class Board {
 				this.conter = 0;
 			}
 		}
-		
+
 		Ccounter(this.conter);
 
-		for (int i = 0; i < 3; i++) {
-			if (Board[i][0] == this.validXO) {
-				this.conter++;
-
-			} else {
-				this.conter = 0;
-			}
-
-		}
-		Ccounter(this.conter);
-		for (int i = 0; i < 3; i++) {
-			if (Board[i][1] == this.validXO) {
-				this.conter++;
-
-			} else {
-				this.conter = 0;
-			}
-		}
-		Ccounter(this.conter);
-		for (int i = 0; i < 3; i++) {
-			if (Board[i][2] == this.validXO) {
-				this.conter++;
-
-			} else {
-				this.conter = 0;
-			}
-		}
-		Ccounter(this.conter);
-		
-		int i =0;
+		int i = 0;
 		while (i == 0) {
 			if (Board[0][2] == this.validXO && Board[1][1] == this.validXO && Board[2][0] == this.validXO) {
 				this.conter = 3;
@@ -212,11 +160,40 @@ public class Board {
 			} else {
 				this.conter = 0;
 				i++;
-				
+
 			}
 		}
 		Ccounter(this.conter);
 
+	}
+
+	private void indexMainArray(int indexMainArray) {
+		this.conter = 0;
+		for (int i = 0; i < 3; i++) {
+			if (Board[indexMainArray][i] == this.validXO) {
+				this.conter++;
+
+			} else {
+				this.conter = 0;
+			}
+
+		}
+		Ccounter(this.conter);
+
+	}
+
+	private void indexSecondArray(int indexSecondArray) {
+		this.conter = 0;
+		for (int i = 0; i < 3; i++) {
+			if (Board[i][indexSecondArray] == this.validXO) {
+				this.conter++;
+
+			} else {
+				this.conter = 0;
+			}
+
+		}
+		Ccounter(this.conter);
 
 	}
 
@@ -232,11 +209,12 @@ public class Board {
 
 	private void Ccounter(int conter) {
 
-		if (conter == 3 || conter > 6 ) {
+		if (conter == 3 || conter > 6) {
 
 			System.out.println("Congratulations the player " + this.Player + " won");
 			showBoard();
-			System.exit(1);
+			this.continueGame = 1;
+			
 		} else {
 			;
 		}
