@@ -29,6 +29,7 @@
 			<item value="org.eclipse.wst.jsdt.ui.java"/>
 			<item value="org.eclipse.jpt.jaxb"/>
 			<item value="org.eclipse.pde.PDE"/>
+			<item value="org.eclipse.jst.ws.ui.new"/>
 		</list>
 	</section>
 </section>
