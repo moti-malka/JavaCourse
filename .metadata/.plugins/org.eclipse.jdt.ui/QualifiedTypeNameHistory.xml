@@ -18,11 +18,19 @@
 <fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="Pacakage.players"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="Pacakage.Board"/>
 <fullyQualifiedTypeName name="AnimalPackage.Animal"/>
 <fullyQualifiedTypeName name="org.omg.CORBA.PUBLIC_MEMBER"/>
 <fullyQualifiedTypeName name="AnimalPackage.Dog"/>
 <fullyQualifiedTypeName name="Vehicles.Vehicles"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="java.security.Timestamp"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.time.LocalDate"/>
+<fullyQualifiedTypeName name="javax.xml.crypto.Data"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="garagePackage.Vehicles"/>
+<fullyQualifiedTypeName name="garagePackage.Car"/>
+<fullyQualifiedTypeName name="garagePackage.motorcycle"/>
 </qualifiedTypeNameHistroy>
