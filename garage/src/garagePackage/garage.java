@@ -12,10 +12,13 @@ public class garage {
 	}
 
 	public void addCarToGarage(String engineVolume, int licenseNumber, String color) {
+
 		if (nextCellFree() != -1) {
+
 			garage[nextCellFree()] = new Car(engineVolume, licenseNumber, color);
+
 		} else {
-			System.out.println("ne ceel free");
+			System.out.println("Ther is not ceel free in garage!!");
 		}
 
 	}
@@ -25,19 +28,57 @@ public class garage {
 		for (int i = 0; i < garage.length; i++) {
 			if (this.garage[i] == null) {
 				this.nextCell = i;
+
 				i = garage.length;
 
 			}
 
 		}
+
 		return this.nextCell;
 
 	}
 
-	
-	@Override
-	public String toString() {
-		return "garage [garage=" + Arrays.toString(garage) + "]";
+	public void checkRoutineTreatment(int licenseNumber, String dateCheck) {
+		if (RoutineTreatment(licenseNumber, dateCheck) == true) {
+
+			System.out.println("The RoutineTreatment Sucess");
+		} else {
+			System.out.println("The RoutineTreatment not Sucess!!");
+		}
+
+	}
+
+	private boolean RoutineTreatment(int licenseNumber, String dateCheck) {
+		int indec = 0;
+		for (int i = 0; i < garage.length; i++) {
+
+			int id = garage[i].getLicenseNumber();
+			System.out.println(id);
+
+			if (licenseNumber == garage[i].getLicenseNumber()) {
+
+				garage[i].RoutineTreatment(dateCheck);
+				indec = 1;
+
+			}
+
+		}
+
+		if (indec == 1) {
+			return true;
+		} else {
+			return false;
+		}
+
+	}
+
+	public Vehicles showVehicles(int position) {
+		return garage[position];
+	}
+
+	public String showGarage() {
+		return "garage=" + Arrays.toString(garage) + "";
 	}
 
 }

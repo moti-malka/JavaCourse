@@ -7,7 +7,7 @@ public class Car extends Vehicles {
 	private String Switchwipers;
 
 	public Car( String engineVolume, int licenseNumber, String color) {
-		super(wheels, "1600", 1234);
+		super(wheels, engineVolume, licenseNumber);
 		this.Color = color;
 	}
 
@@ -17,6 +17,8 @@ public class Car extends Vehicles {
 		this.Switchwipers = "wipers was replaced";
 
 	}
+	
+	
 
 	@Override
 	public String toString() {

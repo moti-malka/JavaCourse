@@ -23,6 +23,17 @@ public class Vehicles {
 		this.checkOil = "Oil was treated";
 
 	}
+	
+	
+
+	public int getLicenseNumber() {
+		return licenseNumber;
+	}
+
+	public String getDateCheck() {
+		return dateCheck;
+	}
+
 
 	@Override
 	public String toString() {
