@@ -8,7 +8,6 @@
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="java.security.AllPermission"/>
 <fullyQualifiedTypeName name="PackegesBank.BankAccount"/>
-<fullyQualifiedTypeName name="java.lang.Double"/>
 <fullyQualifiedTypeName name="prodact.product"/>
 <fullyQualifiedTypeName name="ClockPackage.Clock"/>
 <fullyQualifiedTypeName name="javax.xml.ws.FaultAction"/>
@@ -32,6 +31,9 @@
 <fullyQualifiedTypeName name="garagePackage.garage"/>
 <fullyQualifiedTypeName name="garagePackage.Car"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="BankPackage.RegularAccount"/>
+<fullyQualifiedTypeName name="java.lang.Double"/>
+<fullyQualifiedTypeName name="BankPackage.business"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>
