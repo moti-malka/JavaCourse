@@ -2,19 +2,22 @@ package BankPackage;
 
 public class RegularAccount {
 
-	private final String clientID;
-	private double balance;
-	protected int COW;
-	protected int COD;
+	protected final String clientID;
+	private double balance; 
+	private int COW = 3;
+	private int COD = 1;
+	private final int bonus = 0;
+
 
 	public RegularAccount(String clientID) {
 		this.balance = 0;
 		this.clientID = clientID;
-		COW = 3;
-		COD = 1; 
 
 	}
 
+	public int getBonus() {
+		return bonus;
+	}
 	public String getClientID() {
 		return clientID;
 	}
@@ -22,20 +25,20 @@ public class RegularAccount {
 	public double getBalance() {
 		return balance;
 	}
- 
-	public void deposit(Double sumTodeposit) {
-		this.balance += (sumTodeposit + this.COD);
+
+	public void deposit(double sumTodeposit) {
+		this.balance += (sumTodeposit + COD);
 	}
 
-	public void withdraw(Double sumwithdraw) {
-		this.balance -= sumwithdraw - this.COW;
+	public void withdraw(double sumwithdraw) {
+		
+		this.balance -= (sumwithdraw + this.COW);
+		
 	}
 
 	@Override
 	public String toString() {
-		return "Your ID: " + clientID + '\n' + "your balance: "  + balance;
+		return "Your ID: " + clientID + '\n' + "your balance: " + getBalance();
 	}
-	
-	
 
 }
