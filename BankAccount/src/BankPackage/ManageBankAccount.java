@@ -4,19 +4,16 @@ public class ManageBankAccount {
 
 	public static void main(String[] args) {
 
-		business Rami = new business("123456");
-
-		Rami.deposit(150);
-
-		System.out.println(Rami.toString());
+		StockAccount Moti = new StockAccount("0505758244");
 		
-		Rami.withdraw(40);
-		System.out.println(Rami.toString());
-		Rami.withdraw(150);
-		System.out.println(Rami.toString());
-		Rami.deposit(80);
-		System.out.println(Rami.toString());
+		System.out.println(Moti.toString());
 		
+		Moti.deposit(2);
+		
+		System.out.println(Moti.toString());
+		
+		Moti.withdraw(10);
+		System.out.println(Moti.toString());
 		
 	}
 
