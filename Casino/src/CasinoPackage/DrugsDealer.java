@@ -2,9 +2,11 @@ package CasinoPackage;
 
 public class DrugsDealer extends person implements Dealer {
 
-	public DrugsDealer(String id, String name) {
+	private AddictedPlayer[] addictedPlayer;
+	
+	public DrugsDealer(String id, String name, int SumOfaddictedPlayer) {
 		super(id, name);
-		// TODO Auto-generated constructor stub
+		this.addictedPlayer = new AddictedPlayer[SumOfaddictedPlayer]; 
 	}
 
 	@Override
@@ -24,6 +26,34 @@ public class DrugsDealer extends person implements Dealer {
 		// TODO Auto-generated method stub
 		return super.getId();
 	}
+	
+	public void sellDrags(float GrasToBay) {
+		AddictedPlayer.BayGras(GrasToBay);
+	}
+
+	public void addictedPlayer(AddictedPlayer addictedPlayerName) {
+		int nextcell = nextCell();
+		if (nextcell == -1) {
+			System.out.println("the list is a full");
+		} else {
+			this.addictedPlayer[nextcell] = addictedPlayerName;
+			
+		}
+
+	}
+
+	private int nextCell() {
+		int next = -1;
+		for (int i = 0; i < this.addictedPlayer.length; i++) {
+			if (this.addictedPlayer[i] == null) {
+				next = i;
+			}
+
+		}
+		return next;
+	}
+
+
 
 	@Override
 	public String toString() {

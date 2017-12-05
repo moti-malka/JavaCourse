@@ -1,15 +1,19 @@
 package CasinoPackage;
 
+import java.util.Arrays;
+
 public class CardsDealer extends person implements Dealer {
 
-	public CardsDealer(String id, String name) {
+	private Player[] playersToDeal;
+
+	public CardsDealer(String id, String name, int SumOfPlayers) {
 		super(id, name);
-		// TODO Auto-generated constructor stub
+		playersToDeal = new Player[SumOfPlayers];
+
 	}
 
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
 		return super.getName();
 	}
 
@@ -25,19 +29,46 @@ public class CardsDealer extends person implements Dealer {
 		return super.getId();
 	}
 
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+	public void dealCards(int NumOfCard) {
+		ableToConsumer()
+
+	}
+
+	public void addPlayerToList(Player playerName) {
+		int nextcell = nextCell();
+		if (nextcell == -1) {
+			System.out.println("the list is a full");
+		} else {
+			this.playersToDeal[nextcell] = playerName;
+			
+		}
+
+	}
+
+	private int nextCell() {
+		int next = -1;
+		for (int i = 0; i < this.playersToDeal.length; i++) {
+			if (this.playersToDeal[i] == null) {
+				next = i;
+			}
+
+		}
+		return next;
+	}
+	
+	public void name() {
+		
 	}
 
 	@Override
 	public void ableToDeal(int listOfPlayers) {
-		Player[] players = new Player[listOfPlayers];
-		for (Player player : players) {
-			System.out.println("deal card to : " + player);
-			
-		}
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public String toString() {
+		return  Arrays.toString(playersToDeal) + "]";
 	}
 
 }

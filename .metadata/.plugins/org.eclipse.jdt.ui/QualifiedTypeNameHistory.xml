@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.lang.Comparable"/>
-<fullyQualifiedTypeName name="CasinoPackage.Consumer"/>
 <fullyQualifiedTypeName name="CasinoPackage.person"/>
 <fullyQualifiedTypeName name="CasinoPackage.Dealer"/>
+<fullyQualifiedTypeName name="CasinoPackage.CardsDealer"/>
+<fullyQualifiedTypeName name="java.lang.LinkageError"/>
 <fullyQualifiedTypeName name="CasinoPackage.Player"/>
+<fullyQualifiedTypeName name="CasinoPackage.Consumer"/>
+<fullyQualifiedTypeName name="CasinoPackage.DrugsDealer"/>
+<fullyQualifiedTypeName name="CasinoPackage.AddictedPlayer"/>
 </qualifiedTypeNameHistroy>

@@ -2,10 +2,11 @@ package CasinoPackage;
 
 public class Player extends person implements Consumer {
 
-	
-	
+	private static int card;
+
 	public Player(String id, String name) {
 		super(id, name);
+		this.card = 0;
 
 	}
 
@@ -29,14 +30,12 @@ public class Player extends person implements Consumer {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		return super.toString() + "Player [card=" + card + "]";
 	}
 
 	@Override
-	public void ableToConsumer() {
-		
-		
+	public static void ableToConsumer(int numberOfCard) {
+		card += numberOfCard;
 	}
 
 }
