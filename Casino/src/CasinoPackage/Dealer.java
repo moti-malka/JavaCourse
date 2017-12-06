@@ -2,6 +2,6 @@ package CasinoPackage;
 
 public interface Dealer {
 
-	void ableToDeal(int listOfPlayers);
+	void ableToDeal(int SumToDeal, String playerToDeal);
 
 }

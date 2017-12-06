@@ -3,10 +3,10 @@ package CasinoPackage;
 public class DrugsDealer extends person implements Dealer {
 
 	private AddictedPlayer[] addictedPlayer;
-	
+
 	public DrugsDealer(String id, String name, int SumOfaddictedPlayer) {
 		super(id, name);
-		this.addictedPlayer = new AddictedPlayer[SumOfaddictedPlayer]; 
+		this.addictedPlayer = new AddictedPlayer[SumOfaddictedPlayer];
 	}
 
 	@Override
@@ -26,18 +26,26 @@ public class DrugsDealer extends person implements Dealer {
 		// TODO Auto-generated method stub
 		return super.getId();
 	}
-	
-	public void sellDrags(float GrasToBay) {
-		AddictedPlayer.BayGras(GrasToBay);
+
+	@Override
+	public void ableToDeal(int SumOfDrags, String playerToDeal) {
+		for (int i = 0; i < addictedPlayer.length; i++) {
+			if (this.addictedPlayer[i] == null) {
+				i++;
+			} else if (this.addictedPlayer[i].getName().equals(playerToDeal)) {
+				this.addictedPlayer[i].ableToConsumer(SumOfDrags);
+			}
+		}
+
 	}
 
 	public void addictedPlayer(AddictedPlayer addictedPlayerName) {
 		int nextcell = nextCell();
 		if (nextcell == -1) {
-			System.out.println("the list is a full");
+			System.out.println("cannot add " + addictedPlayerName.getName() + " to list the list is a flul ");
 		} else {
 			this.addictedPlayer[nextcell] = addictedPlayerName;
-			
+
 		}
 
 	}
@@ -53,18 +61,10 @@ public class DrugsDealer extends person implements Dealer {
 		return next;
 	}
 
-
-
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
 		return super.toString();
-	}
-
-	@Override
-	public void ableToDeal(int listOfConsumers) {
-		// TODO Auto-generated method stub
-
 	}
 
 }

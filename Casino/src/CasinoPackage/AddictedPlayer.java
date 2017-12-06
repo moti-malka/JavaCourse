@@ -2,8 +2,9 @@ package CasinoPackage;
 
 public class AddictedPlayer extends Player implements Consumer {
 
-	private static float drugsGrams;
-	
+	private final String type = "AddictedPlayer";
+	private int drugsGrams;
+
 	public AddictedPlayer(String id, String name) {
 		super(id, name);
 		this.drugsGrams = 0;
@@ -27,29 +28,21 @@ public class AddictedPlayer extends Player implements Consumer {
 		// TODO Auto-generated method stub
 		return super.getId();
 	}
+    @Override
+	public void ableToConsumer(int GrasToBay) {
+		this.drugsGrams = GrasToBay;
+	}
 
-	@Override
-	public  void ableToConsumer() {
-		// TODO Auto-generated method stub
-		super.ableToConsumer();
-	}
-	
-	public static void BayGras(float GrasToBay ) {
-		drugsGrams = GrasToBay;
-	}
-	
 	public float grasExists() {
 		return drugsGrams;
-		
+
 	}
-	
+
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return super.toString();
+		return "Name: " + getName() + '\n' + "ID: " + getId() + '\n' + "Type :"
+				+ type +'\n' + "SumDrugs: " + drugsGrams + '\n';
 	}
-	
-	
-	
 
 }

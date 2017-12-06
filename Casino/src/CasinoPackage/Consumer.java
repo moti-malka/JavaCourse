@@ -2,6 +2,6 @@ package CasinoPackage;
 
 public interface Consumer {
 
-	public void ableToConsumer();
-
+	public void ableToConsumer(int consumer);
+	
 }

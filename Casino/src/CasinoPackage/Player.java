@@ -2,7 +2,8 @@ package CasinoPackage;
 
 public class Player extends person implements Consumer {
 
-	private static int card;
+	private final String type = "player";
+	private int card;
 
 	public Player(String id, String name) {
 		super(id, name);
@@ -28,14 +29,18 @@ public class Player extends person implements Consumer {
 		return super.getId();
 	}
 
-	@Override
-	public String toString() {
-		return super.toString() + "Player [card=" + card + "]";
-	}
 
 	@Override
-	public static void ableToConsumer(int numberOfCard) {
-		card += numberOfCard;
+	public void ableToConsumer(int consumer) {
+		this.card = consumer;
 	}
+	
+	
+
+	@Override
+	public String toString() {
+		return super.toString() + '\n' + "Type :" + this.type +'\n' + "Cards :" + card + '\n';
+	}
+
 
 }

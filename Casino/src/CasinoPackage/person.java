@@ -24,7 +24,8 @@ public class person {
 
 	@Override
 	public String toString() {
-		return "person [id=" + id + ", name=" + name + "]";
+		return "Name: " + name + '\n' + 
+				"ID: " + id ;
 	}
 
 }

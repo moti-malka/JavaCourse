@@ -29,18 +29,25 @@ public class CardsDealer extends person implements Dealer {
 		return super.getId();
 	}
 
-	public void dealCards(int NumOfCard) {
-		ableToConsumer()
+	@Override
+	public void ableToDeal(int SumOfCards, String playerToDeal) {
+		for (int i = 0; i < playersToDeal.length; i++) {
+			if (this.playersToDeal[i] == null) {
+				i++;
+			} else if (this.playersToDeal[i].getName().equals(playerToDeal)) {
+				this.playersToDeal[i].ableToConsumer(SumOfCards);
+			}
+		}
 
 	}
 
 	public void addPlayerToList(Player playerName) {
 		int nextcell = nextCell();
 		if (nextcell == -1) {
-			System.out.println("the list is a full");
+			System.out.println("cannot add: " + playerName.getName() + " to list the list is a full");
 		} else {
 			this.playersToDeal[nextcell] = playerName;
-			
+
 		}
 
 	}
@@ -55,20 +62,14 @@ public class CardsDealer extends person implements Dealer {
 		}
 		return next;
 	}
-	
-	public void name() {
-		
-	}
 
-	@Override
-	public void ableToDeal(int listOfPlayers) {
-		// TODO Auto-generated method stub
+	public void name() {
 
 	}
 
 	@Override
 	public String toString() {
-		return  Arrays.toString(playersToDeal) + "]";
+		return Arrays.toString(playersToDeal) + "]";
 	}
 
 }
