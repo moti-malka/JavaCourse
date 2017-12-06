@@ -3,7 +3,7 @@ package CasinoPackage;
 public class CasinoApp {
 
 	public static void main(String[] args) {
-		
+		/*
 		//create 3 new player object
 		Player motim = new Player("3049940007", "motim");
 		Player nehora = new Player("0523644755", "nehora");
@@ -45,52 +45,23 @@ public class CasinoApp {
 		System.out.println(david.toString());
 		System.out.println(nehora.toString());
 		
+		*/
 		
-		
-		//create 3 new AddictedPlayer object
 		AddictedPlayer sami = new AddictedPlayer("52585", "sami");
-		AddictedPlayer rami = new AddictedPlayer("66669", "rami");
-		AddictedPlayer moshe = new AddictedPlayer("8484848", "moshe");
-		
-
-		//create 3 new DrugsDealer object
-		DrugsDealer Or = new DrugsDealer("5252111", "Or", 3);
-		DrugsDealer chen = new DrugsDealer("00000", "chen ", 5);
-		DrugsDealer lior = new DrugsDealer("587777", "lior", 5);
-		
-		
-		//add addictedPlayer to lists in DrugsDelaer Or
-		Or.addictedPlayer(sami);
-		Or.addictedPlayer(rami);
-		Or.addictedPlayer(moshe);
-		
-		
-		
-		//add addictedPlayer to lists in DrugsDelaer chen
-		chen.addictedPlayer(sami);
-		chen.addictedPlayer(rami);
-		chen.addictedPlayer(moshe);
+		AddictedPlayer moti = new AddictedPlayer("123456", "moti");
+		AddictedPlayer yosef = new AddictedPlayer("12548444", "yosef");
 	
+		DrugsDealer Or = new DrugsDealer("5252111", "Or", 3, 50);
 		
-		//add addictedPlayer to lists in DrugsDelaer lior
-		lior.addictedPlayer(sami);
-		lior.addictedPlayer(rami);
-		lior.addictedPlayer(moshe);
+		Or.addictedPlayer(sami);
+		Or.addictedPlayer(moti);
+		Or.addictedPlayer(yosef);
 		
+		Or.ableToDeal(10, "sami");
+		Or.ableToDeal(10, "moti");
+		Or.ableToDeal(10, "yosef");
 		
-		//DragsDelaers deal Drags to addictedPlayer
-		Or.ableToDeal(9, "sami");
-		chen.ableToDeal(4, "rami");
-		lior.ableToDeal(1, "moshe");
-
-		
-		//show details of all players
-		System.out.println(sami.toString());
-		System.out.println(moshe.toString());
-		System.out.println(rami.toString());
-		
-		
-
+		System.out.println(Or.toString()); 
 	}
 
 }

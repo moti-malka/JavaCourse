@@ -1,12 +1,17 @@
 package CasinoPackage;
 
+import java.util.Arrays;
+
 public class DrugsDealer extends person implements Dealer {
 
+	private int SumDrags;
 	private AddictedPlayer[] addictedPlayer;
+	private static int NextCell = 0;
 
-	public DrugsDealer(String id, String name, int SumOfaddictedPlayer) {
+	public DrugsDealer(String id, String name, int SumOfaddictedPlayer, int inventoryDrags) {
 		super(id, name);
 		this.addictedPlayer = new AddictedPlayer[SumOfaddictedPlayer];
+		SumDrags = inventoryDrags;
 	}
 
 	@Override
@@ -27,44 +32,43 @@ public class DrugsDealer extends person implements Dealer {
 		return super.getId();
 	}
 
+	public void addictedPlayer(AddictedPlayer addictedPlayerName) {
+		if (NextCell >= addictedPlayer.length) {
+			System.out.println("cannot add " + addictedPlayerName.getName()
+			+ " to list the list is a full");
+		} else {
+			this.addictedPlayer[NextCell] = addictedPlayerName;
+			NextCell++;
+
+		}
+
+	}
+
 	@Override
 	public void ableToDeal(int SumOfDrags, String playerToDeal) {
+		if (this.SumDrags == 0) {
+			System.out.println("the DragsDelear " + this.getName() + " Cannot Deal Drags, The inventory is over");
+		} else if (SumOfDrags > this.SumDrags) {
+			SumOfDrags = SumOfDrags - (SumOfDrags % this.SumDrags);
+		}
 		for (int i = 0; i < addictedPlayer.length; i++) {
-			if (this.addictedPlayer[i] == null) {
-				i++;
-			} else if (this.addictedPlayer[i].getName().equals(playerToDeal)) {
+			if (this.addictedPlayer[i].getName().equals(playerToDeal)) {
 				this.addictedPlayer[i].ableToConsumer(SumOfDrags);
-			}
-		}
-
-	}
-
-	public void addictedPlayer(AddictedPlayer addictedPlayerName) {
-		int nextcell = nextCell();
-		if (nextcell == -1) {
-			System.out.println("cannot add " + addictedPlayerName.getName() + " to list the list is a flul ");
-		} else {
-			this.addictedPlayer[nextcell] = addictedPlayerName;
-
-		}
-
-	}
-
-	private int nextCell() {
-		int next = -1;
-		for (int i = 0; i < this.addictedPlayer.length; i++) {
-			if (this.addictedPlayer[i] == null) {
-				next = i;
+				this.SumDrags -= SumOfDrags;
+				return;
 			}
 
 		}
-		return next;
+
 	}
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		return "         - DrugsDealer list -" + '\n' +
+				"DrugsDealer name: " + getName()+'\n'+
+				"Drags inventory After sale :" + SumDrags + '\n' + 
+				"All addictedPlayer: " + Arrays.toString(addictedPlayer);
+				
 	}
 
 }
