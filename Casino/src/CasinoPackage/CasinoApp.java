@@ -77,6 +77,22 @@ public class CasinoApp {
 		System.out.println(Or.toString());
 		System.out.println(tom.toString());
 		System.out.println(ori.toString());
+		
+		//create Object of Santa
+		Santa loli = new Santa("2525658", "loli", 6, 13);
+
+		//add player to list to deal toys
+		loli.addPlayrToLIst(sami);
+		loli.addPlayrToLIst(motim);
+		loli.addPlayrToLIst(popo);
+		loli.addPlayrToLIst(yosef);
+		loli.addPlayrToLIst(david);
+		
+		loli.ableToDeal(2, "motim");
+		loli.ableToDeal(2, "popo");
+		loli.ableToDeal(2, "yosef");
+		loli.ableToDeal(2, "david");
+		loli.ableToDeal(2, "motim");
 
 	}
 
