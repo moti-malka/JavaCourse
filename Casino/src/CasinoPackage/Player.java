@@ -13,7 +13,6 @@ public class Player extends person implements Consumer {
 
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
 		return super.getName();
 	}
 

@@ -11,6 +11,7 @@ public class person {
 	}
 
 	public String getName() {
+
 		return name;
 	}
 
@@ -24,8 +25,7 @@ public class person {
 
 	@Override
 	public String toString() {
-		return "Name: " + name + '\n' + 
-				"ID: " + id ;
+		return "Name: " + name + '\n' + "ID: " + id;
 	}
 
 }
