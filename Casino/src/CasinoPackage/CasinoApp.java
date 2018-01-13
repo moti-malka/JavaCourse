@@ -93,7 +93,21 @@ public class CasinoApp {
 		loli.ableToDeal(2, "yosef");
 		loli.ableToDeal(2, "david");
 		loli.ableToDeal(2, "motim");
-
+		
+		System.out.println(loli.toString());
+		
+		int x = 5;
+		int y = ++x + ++x;
+		
+		System.out.println(x);
+		System.out.println(y);
+		
+		
+		
+		
+	
+		
+		
 	}
 
 }

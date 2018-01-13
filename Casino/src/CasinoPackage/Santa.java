@@ -1,5 +1,7 @@
 package CasinoPackage;
 
+import java.util.Arrays;
+
 public class Santa extends person implements Dealer {
 
 	private Player[] ListOfPlayers;
@@ -64,7 +66,8 @@ public class Santa extends person implements Dealer {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		return "         - Santa " + getName() + " list -" + '\n' + "Santa name: " + getName() + '\n'
+				+ "Toys inventory After Deal :" + SumOftoys + '\n' + "All Player: " + Arrays.toString(ListOfPlayers);
+
 	}
 }

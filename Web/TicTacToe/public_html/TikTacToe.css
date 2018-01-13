@@ -1,0 +1,72 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 13, 2018, 9:44:04 PM
+    Author     : Motim
+*/
+
+
+.center
+{
+    text-align: center; 
+}
+
+h1
+{
+    display: inline;
+    font-size: 50px;
+}
+
+.squareX {
+
+    background: #F0E68C;
+    width: 100px;
+    height: 60px;
+    position: absolute;
+    top: 70px;
+    left: 50%;  /* Put the left edge on the horizontal center */
+    margin-left: -120px;
+
+}
+.squareO {
+
+    background: #F0E68C;
+    width: 100px;
+    height: 60px;
+    position: absolute;
+    top: 70px;
+    right: 50%;  /* Put the left edge on the horizontal center */
+    margin-right: -120px;
+}
+
+.circleX {
+    width: 20px;
+    height: 20px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    background: sienna;
+    position: absolute;
+    top: 33px;
+    left: 193%;  /* Put the left edge on the horizontal center */
+    margin-left: -120px;
+    border-style: solid;
+}
+
+
+.circleO {
+    width: 20px;
+    height: 20px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    background: sienna;
+    position: absolute;
+    top: 33px;
+    right: 193%;  /* Put the left edge on the horizontal center */
+    margin-right: -190px;
+    border-style: solid;
+}
