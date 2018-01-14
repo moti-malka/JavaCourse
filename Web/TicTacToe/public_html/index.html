@@ -10,6 +10,7 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="TikTacToe.css" type="text/css"/>
+        <script src="TikTacToe.js"></script>
 
     </head>
     <body class="center">
@@ -33,9 +34,33 @@ and open the template in the editor.
             </div>
         </div>
 
-
-
-
+        <div>
+            <table id="myTable">
+                <tr>
+                    <td id="1" onclick="insertXO(this)">___</td>
+                    <td id="2" onclick="insertXO(this)">___</td>
+                    <td id="3" onclick="insertXO(this)">___</td>
+                </tr>
+                <tr>
+                    <td id="4" onclick="insertXO(this)">___</td>
+                    <td id="5" onclick="insertXO(this)">___</td>
+                    <td id="6" onclick="insertXO(this)">___</td>
+                </tr>
+                <tr>
+                    <td id="7" onclick="insertXO(this)">___</td>
+                    <td id="8" onclick="insertXO(this)">___</td>
+                    <td id="9" onclick="insertXO(this)">___</td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <p class="pWinner">The winner is:</p>
+        </div>
+        <div class="squareWinner"></div>
+        <div >
+            <button class= "buttonRestart" type="button" onclick="restart()">Restart 
+            </button>
+        </div>
 
     </body>
 </html>
