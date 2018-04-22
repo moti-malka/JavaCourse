@@ -18,6 +18,7 @@ public class EventsController {
 	public List<Event> getAllEvents() {
 		List<Event> list = EventsDAO.listAll();
 		System.out.println("Found " + list.size() + " events");
+		System.out.println(list);
 		return list;
 	}
 
