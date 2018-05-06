@@ -9,12 +9,12 @@ and open the template in the editor.
         <title>Guess-The-Number</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="GTN.js"></script>
-        <link rel="stylesheet" type="text/css" href="GTN.css">
+        <link rel="stylesheet" type="text/css" href="GuessTheNumber.css">
     </head>
     <body>
         <h1>GUESS THE NUMBERS</h1>
-        <div id="startBtn"  class="button" onclick="document.getElementById('id01').style.display='block'">
+        
+            <div  class="button">
                 <div class="outer">
                     <div class="height">
                         <div class="inner">Start Guess</div>
@@ -22,35 +22,12 @@ and open the template in the editor.
                 </div>
             </div>
         
- <div id="wrapper" class="wrapper">
+<div class="wrapper">
   <div class="letters"><span class="letter">G</span><span class="letter">U</span><span class="letter">E</span><span class="letter">S</span><span class="letter">S</span>
       <span class="letter">T</span><span class="letter">H</span><span class="letter">E</span>
       <span class="letter">N</span><span class="letter">U</span><span class="letter">M</span><span class="letter">B</span><span class="letter">e</span><span class="letter">R</span>
   </div>
   
 </div>
-        <div id="id01" class="modal">
-  
-  <form class="modal-content animate">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      
-    </div>
-
-    <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input id="userName" type="text" placeholder="Enter Username" name="uname" required>
-
-      <label for="psw"><b>Password</b></label>
-      <input id="pass" type="password" placeholder="Enter Password" name="psw" required>
-      <button onclick="signInBtn()" type="submit">Login</button>
-      
-    </div>
-
-      <div class="container" style="background-color:#f1f1f1"></div>
-  </form>
-</div>
-        
-
     </body>
 </html>
